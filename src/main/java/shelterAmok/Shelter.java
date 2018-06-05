@@ -27,11 +27,12 @@ public class Shelter {
 	}
 
 	public void feedOrganic() {
-		for (OrganicPet )
-		
+		for (Pet pet : pets.values()) {
+			if(pet instanceof OrganicPet) {
+				((OrganicPet) pet).feed();
+			}
 	}
-	//for (VirtualPet pet : pets.values()) {
-//		pet.feed();
-//	}
+	//for(Employee employee : employees.values()) {
+     //   if (employee instanceof MedicalDuties) {
 
-}
+}}
