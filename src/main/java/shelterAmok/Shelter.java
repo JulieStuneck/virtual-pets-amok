@@ -26,4 +26,12 @@ public class Shelter {
 		pets.remove(anyPet.getName());
 	}
 
+	public void feedOrganic() {
+		for (OrganicPet )
+		
+	}
+	//for (VirtualPet pet : pets.values()) {
+//		pet.feed();
+//	}
+
 }

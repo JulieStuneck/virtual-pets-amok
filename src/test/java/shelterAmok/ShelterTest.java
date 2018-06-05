@@ -71,5 +71,23 @@ public class ShelterTest {
 		Collection<Pet> petsInShelter = myShelter.allPets();
 		assertThat(petsInShelter, containsInAnyOrder(k9, garfield));
 	}
+	
+	@Test
+	public void ShouldBeAbleToFeedAllOrganicPets() {
+		myShelter.add(snoopy);
+		myShelter.add(garfield);
+		myShelter.feedOrganic();
+
+	}//	@Test
+//	public void ReduceHungerForAllPets() {
+//	underTest.add(pet1);
+//	underTest.add(pet2);
+//	underTest.feedAll();
+//	int check = pet1.getHunger();
+//	assertEquals(8, check);
+//	int check2 = pet2.getHunger();
+//	assertEquals(18, check2);
+	
+	
 
 }
