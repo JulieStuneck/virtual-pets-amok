@@ -137,6 +137,6 @@ public class ShelterTest {
 	public void HealthResultOfHappinessX10andSubtractAllOthers() {
 		myShelter.add(snoopy);
 		int check = snoopy.calculateHealth();
-		assertEquals(60, check);
+		assertEquals(70, check);
 	}
 }
