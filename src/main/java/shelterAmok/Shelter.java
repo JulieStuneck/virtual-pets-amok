@@ -17,9 +17,13 @@ public class Shelter {
 
 		return pets.get(name);
 	}
-	
-	public Collection<Pet> getAllPets() {
+
+	public Collection<Pet> allPets() {
 		return pets.values();
+	}
+
+	public void remove(Pet anyPet) {
+		pets.remove(anyPet.getName());
 	}
 
 }
