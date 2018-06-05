@@ -60,22 +60,27 @@ public class Shelter {
 			} else {
 				((RoboticPet) pet).tick();
 			}
-
 		}
 
-		// public Dog(String name, int hunger, int thirst, int boredom, int waste, int
-		// health, int happiness, String description) {
-
-		// public void displayOrganicPets() {
-		// for (Pet pet : pets.values()) {
-		// if (pet instanceof OrganicPet) {
-		// System.out.println("Name: " + pet.getName() + ", " + pet.getDescription() +
-		// "; Hunger = " + pet.getHunger);
-		// }
-		// for (Employee employee : employees.values()) {
-		// System.out.println("Emp Number: " + employee.getNumber() + " Name: " +
-		// employee.getName() + " Salary: "
-		// + employee.calculatePay());
 	}
 
+	// public Dog(String name, int hunger, int thirst, int boredom, int waste, int
+	// health, int happiness, String description) {
+
+	public void displayOrganicPets() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof OrganicPet) {
+				System.out.println("Name: " + pet.getName() + " - " + pet.getDescription() + "; Hunger = "
+						+ ((OrganicPet) pet).getHunger() + "; Thirst = " + ((OrganicPet) pet).getThirst()
+						+ "; Boredom = " + ((OrganicPet) pet).getBoredom() + "; Waste in Cage = "
+						+ ((OrganicPet) pet).getWaste());
+			}
+
+			// for (Employee employee : employees.values()) {
+			// System.out.println("Emp Number: " + employee.getNumber() + " Name: " +
+			// employee.getName() + " Salary: "
+			// + employee.calculatePay());
+		}
+
+	}
 }

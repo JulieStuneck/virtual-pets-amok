@@ -121,7 +121,7 @@ public class ShelterTest {
 		check = garfield.getWaste();
 		assertEquals(15, check);
 	}
-	
+
 	@Test
 	public void TickWillDecreaseOilLevelInRoboticPets() {
 		myShelter.add(k9);
@@ -131,5 +131,12 @@ public class ShelterTest {
 		assertEquals(5, check);
 		check = tigger.getOilLevel();
 		assertEquals(5, check);
+	}
+	
+	@Test
+	public void HealthResultOfHappinessX10andSubtractAllOthers() {
+		myShelter.add(snoopy);
+		int check = snoopy.calculateHealth();
+		assertEquals(60, check);
 	}
 }
