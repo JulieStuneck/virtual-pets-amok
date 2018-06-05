@@ -22,4 +22,8 @@ public abstract class RoboticPet extends Pet {
 		oilLevel -= 5;
 	}
 
+	public void tick() {
+		oilLevel -= 5;
+	}
+
 }

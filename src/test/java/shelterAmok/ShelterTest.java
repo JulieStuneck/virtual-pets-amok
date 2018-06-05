@@ -84,4 +84,52 @@ public class ShelterTest {
 		assertEquals(5, check);
 
 	}
+
+	@Test
+	public void ShouldBeAbleToWaterAllOrganicPets() {
+		myShelter.add(snoopy);
+		myShelter.add(garfield);
+		myShelter.waterOrganic();
+		int check = snoopy.getThirst();
+		assertEquals(5, check);
+		check = garfield.getThirst();
+		assertEquals(5, check);
+	}
+
+	@Test
+	public void ShouldBeAbleToOilRoboticPets() {
+		myShelter.add(k9);
+		myShelter.add(tigger);
+		myShelter.oilRobotic();
+		int check = k9.getOilLevel();
+		assertEquals(15, check);
+		check = tigger.getOilLevel();
+		assertEquals(15, check);
+	}
+
+	@Test
+	public void TickWillIncreaseHungerThirstBoredomAndWasteInOrganicPets() {
+		myShelter.add(snoopy);
+		myShelter.add(garfield);
+		myShelter.tick();
+		int check = snoopy.getHunger();
+		assertEquals(15, check);
+		check = garfield.getThirst();
+		assertEquals(15, check);
+		check = snoopy.getBoredom();
+		assertEquals(15, check);
+		check = garfield.getWaste();
+		assertEquals(15, check);
+	}
+	
+	@Test
+	public void TickWillDecreaseOilLevelInRoboticPets() {
+		myShelter.add(k9);
+		myShelter.add(tigger);
+		myShelter.tick();
+		int check = k9.getOilLevel();
+		assertEquals(5, check);
+		check = tigger.getOilLevel();
+		assertEquals(5, check);
+	}
 }

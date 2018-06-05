@@ -41,4 +41,12 @@ public abstract class OrganicPet extends Pet {
 		boredom -= 5;		
 	}
 
+	public void tick() {
+		hunger += 5;
+		thirst += 5;
+		boredom += 5;
+		waste += 5;
+		
+	}
+
 }

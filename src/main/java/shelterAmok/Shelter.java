@@ -28,11 +28,54 @@ public class Shelter {
 
 	public void feedOrganic() {
 		for (Pet pet : pets.values()) {
-			if(pet instanceof OrganicPet) {
+			if (pet instanceof OrganicPet) {
 				((OrganicPet) pet).feed();
 			}
-	}
-	//for(Employee employee : employees.values()) {
-     //   if (employee instanceof MedicalDuties) {
+		}
 
-}}
+	}
+
+	public void waterOrganic() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).water();
+			}
+		}
+
+	}
+
+	public void oilRobotic() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof RoboticPet) {
+				((RoboticPet) pet).increaseOilLevel();
+			}
+		}
+
+	}
+
+	public void tick() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).tick();
+			} else {
+				((RoboticPet) pet).tick();
+			}
+
+		}
+
+		// public Dog(String name, int hunger, int thirst, int boredom, int waste, int
+		// health, int happiness, String description) {
+
+		// public void displayOrganicPets() {
+		// for (Pet pet : pets.values()) {
+		// if (pet instanceof OrganicPet) {
+		// System.out.println("Name: " + pet.getName() + ", " + pet.getDescription() +
+		// "; Hunger = " + pet.getHunger);
+		// }
+		// for (Employee employee : employees.values()) {
+		// System.out.println("Emp Number: " + employee.getNumber() + " Name: " +
+		// employee.getName() + " Salary: "
+		// + employee.calculatePay());
+	}
+
+}
