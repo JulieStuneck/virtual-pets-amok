@@ -20,8 +20,5 @@ public class Dog extends OrganicPet implements WalkDogs {
 		happiness += 5;
 	}
 
-	public int calculateHealth() {
-		health = (happiness*10) - waste - hunger - thirst;
-		return health;
-	}
+
 }

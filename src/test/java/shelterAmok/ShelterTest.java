@@ -134,9 +134,45 @@ public class ShelterTest {
 	}
 	
 	@Test
-	public void HealthResultOfHappinessX10andSubtractAllOthers() {
+	public void OrganicHealthResultOfHappinessX10andSubtractAllOthers() {
 		myShelter.add(snoopy);
 		int check = snoopy.calculateHealth();
 		assertEquals(70, check);
+		myShelter.add(garfield);
+		check = garfield.calculateHealth();
+		assertEquals(70, check);
 	}
+	
+	@Test
+	public void RoboticHealthResultOfHappinessX5MinusOilLevel() {
+		myShelter.add(k9);
+		myShelter.add(tigger);
+		int check = k9.calculateHealth();
+		assertEquals(40, check);
+		check = tigger.calculateHealth();
+		assertEquals(40, check);
+	}
+	
+	@Test 
+	public void ShouldBeAbleToDogCage () {
+		myShelter.add(snoopy);
+		myShelter.add(garfield);
+		snoopy.clean();
+		int check = snoopy.getWaste();
+		assertEquals(0, check);
+		check = garfield.getWaste();
+		assertEquals(10, check);
+	}
+	
+	@Test
+	public void ShelterShouldCleanCatLitterBox () {
+		myShelter.add(garfield);
+		myShelter.add(snoopy);
+		myShelter.cleanLitterBox();
+		int check = garfield.getWaste();
+		assertEquals(0, check);
+		check = snoopy.getWaste();
+		assertEquals(10, check);
+	}
+	
 }

@@ -25,5 +25,10 @@ public abstract class RoboticPet extends Pet {
 	public void tick() {
 		oilLevel -= 5;
 	}
+	
+	public int calculateHealth() {
+		health = (happiness*5) - oilLevel;
+		return health;
+	}
 
 }

@@ -83,4 +83,13 @@ public class Shelter {
 		}
 
 	}
+
+	public void cleanLitterBox() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Cat) {
+				((Cat) pet).clean();
+			} 
+
+		}
+	}
 }

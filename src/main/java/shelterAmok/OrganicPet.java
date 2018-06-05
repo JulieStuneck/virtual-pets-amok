@@ -38,8 +38,10 @@ public abstract class OrganicPet extends Pet {
 	public void play() {
 		hunger += 5;
 		thirst += 5;
-		boredom -= 5;		
+		boredom -= 5;	
+		happiness += 5;
 	}
+	
 
 	public void tick() {
 		hunger += 5;
@@ -47,6 +49,11 @@ public abstract class OrganicPet extends Pet {
 		boredom += 5;
 		waste += 5;
 		
+	}
+	
+	public int calculateHealth() {
+		health = (happiness*10) - waste - hunger - thirst;
+		return health;
 	}
 
 }
