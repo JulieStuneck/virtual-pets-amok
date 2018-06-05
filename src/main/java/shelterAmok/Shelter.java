@@ -64,22 +64,29 @@ public class Shelter {
 
 	}
 
-	// public Dog(String name, int hunger, int thirst, int boredom, int waste, int
-	// health, int happiness, String description) {
-
-	public void displayOrganicPets() {
+	public void displayOrganicPetsStates() {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof OrganicPet) {
 				System.out.println("Name: " + pet.getName() + " - " + pet.getDescription() + "; Hunger = "
 						+ ((OrganicPet) pet).getHunger() + "; Thirst = " + ((OrganicPet) pet).getThirst()
 						+ "; Boredom = " + ((OrganicPet) pet).getBoredom() + "; Waste in Cage = "
-						+ ((OrganicPet) pet).getWaste());
+						+ ((OrganicPet) pet).getWaste() + "; Health: " + ((OrganicPet) pet).calculateHealth()
+						+ "; Happiness: " + ((OrganicPet) pet).getHappiness());
 			}
 
-			// for (Employee employee : employees.values()) {
-			// System.out.println("Emp Number: " + employee.getNumber() + " Name: " +
-			// employee.getName() + " Salary: "
-			// + employee.calculatePay());
+		}
+
+	}
+
+	public void displayRoboticPetStates() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof RoboticPet) {
+				System.out.println("Name: " + pet.getName() + " - " + pet.getDescription() + "; Boredom = "
+						+ ((RoboticPet) pet).getBoredom() + "; Oil Level = " + ((RoboticPet) pet).getOilLevel()
+						+ "; Health: " + ((RoboticPet) pet).calculateHealth() + "; Happiness: "
+						+ ((RoboticPet) pet).getHappiness());
+			}
+
 		}
 
 	}
@@ -88,7 +95,22 @@ public class Shelter {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof Cat) {
 				((Cat) pet).clean();
-			} 
+			}
+
+		}
+	}
+
+	public void cleanOneDogCage() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof Dog) {
+				((Dog) pet).clean();
+			}
+
+		}
+	}
+
+	public void playWithOnePet() {
+		for (Pet pet : pets.values()) {
 
 		}
 	}

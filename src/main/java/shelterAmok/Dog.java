@@ -20,5 +20,4 @@ public class Dog extends OrganicPet implements WalkDogs {
 		happiness += 5;
 	}
 
-
 }

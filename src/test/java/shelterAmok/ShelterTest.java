@@ -15,6 +15,7 @@ public class ShelterTest {
 	Shelter underTest;
 	Shelter myShelter;
 	Dog snoopy;
+	Dog rover;
 	Cat garfield;
 	RoboDog k9;
 	RoboCat tigger;
@@ -23,6 +24,7 @@ public class ShelterTest {
 	public void setUp() {
 		myShelter = new Shelter();
 		snoopy = new Dog("Snoopy", 10, 10, 10, 10, 10, 10, "the napping king");
+		rover = new Dog("Rover", 10, 10, 10, 10, 10, 10, "red and loves company");
 		garfield = new Cat("Garfield", 10, 10, 10, 10, 10, 10, "the orange one");
 		k9 = new RoboDog("K9", 10, 10, 10, 10, "helpful and loyal");
 		tigger = new RoboCat("Tigger", 10, 10, 10, 10, "tail made of springs");
@@ -144,17 +146,17 @@ public class ShelterTest {
 	}
 	
 	@Test
-	public void RoboticHealthResultOfHappinessX5MinusOilLevel() {
+	public void RoboticHealthResultOfHappinessX5PlusOilLevel() {
 		myShelter.add(k9);
 		myShelter.add(tigger);
 		int check = k9.calculateHealth();
-		assertEquals(40, check);
+		assertEquals(60, check);
 		check = tigger.calculateHealth();
-		assertEquals(40, check);
+		assertEquals(60, check);
 	}
 	
 	@Test 
-	public void ShouldBeAbleToDogCage () {
+	public void ShouldBeAbleToCleanDogCage () {
 		myShelter.add(snoopy);
 		myShelter.add(garfield);
 		snoopy.clean();
@@ -173,6 +175,29 @@ public class ShelterTest {
 		assertEquals(0, check);
 		check = snoopy.getWaste();
 		assertEquals(10, check);
+	}
+	
+	@Test  						//Is effecting all dogs, not just one
+	public void ShouldBeAbleToCleanSpecificDogCage() {
+		myShelter.add(snoopy);
+		myShelter.add(rover);
+		myShelter.add(garfield);
+		myShelter.cleanOneDogCage();
+		int check = snoopy.getWaste();
+		assertEquals(0, check);
+		check = rover.getWaste();
+		assertEquals(10, check);
+		check = garfield.getWaste();
+		assertEquals(10, check);
+	}
+	
+	@Test							//Not done
+	public void ShouldBeAbleToPlayWithOnePet() {
+		myShelter.add(snoopy);
+		myShelter.add(rover);
+		myShelter.playWithOnePet();
+		
+		
 	}
 	
 }
