@@ -120,7 +120,7 @@ public class Shelter {
 	public void walkAllDogs() {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof WalkDogs) {
-				((Dog) pet).walk();
+				((WalkDogs) pet).walk();
 			}
 	}
 }}
