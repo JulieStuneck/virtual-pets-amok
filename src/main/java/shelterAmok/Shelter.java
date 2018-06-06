@@ -27,8 +27,8 @@ public class Shelter {
 	}
 
 	public void feedOrganic() {
-		for (Pet pet : pets.values()) {
-			if (pet instanceof OrganicPet) {
+		for (Pet pet : pets.values()) {		//all pets
+			if (pet instanceof OrganicPet) {//check for organic pets
 				((OrganicPet) pet).feed();
 			}
 		}
@@ -65,8 +65,9 @@ public class Shelter {
 	}
 
 	public void displayOrganicPetsStates() {
+		System.out.println("Here are the organic pets currently in the shelter:");
 		for (Pet pet : pets.values()) {
-			if (pet instanceof OrganicPet) {
+				if (pet instanceof OrganicPet) {	
 				System.out.println("Name: " + pet.getName() + " - " + pet.getDescription() + "; Hunger = "
 						+ ((OrganicPet) pet).getHunger() + "; Thirst = " + ((OrganicPet) pet).getThirst()
 						+ "; Boredom = " + ((OrganicPet) pet).getBoredom() + "; Waste in Cage = "
@@ -79,6 +80,7 @@ public class Shelter {
 	}
 
 	public void displayRoboticPetStates() {
+		System.out.println("Here are the robotic pets currently in the shelter:");
 		for (Pet pet : pets.values()) {
 			if (pet instanceof RoboticPet) {
 				System.out.println("Name: " + pet.getName() + " - " + pet.getDescription() + "; Boredom = "
@@ -100,7 +102,7 @@ public class Shelter {
 		}
 	}
 
-	public void cleanOneDogCage() {
+	public void cleanDogCages() {
 		for (Pet pet : pets.values()) {
 			if (pet instanceof Dog) {
 				((Dog) pet).clean();
@@ -111,7 +113,14 @@ public class Shelter {
 
 	public void playWithOnePet() {
 		for (Pet pet : pets.values()) {
-
+			pet.play();
 		}
 	}
-}
+	
+	public void walkAllDogs() {
+		for (Pet pet : pets.values()) {
+			if (pet instanceof WalkDogs) {
+				((Dog) pet).walk();
+			}
+	}
+}}
