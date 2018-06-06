@@ -120,10 +120,7 @@ public class VirtualPetsAmokApp {
 			} else
 
 				myShelter.tick();
-			// System.out.println("");
-			// myShelter.displayOrganicPetsStates();
-			// myShelter.displayRoboticPetStates();
-
+			
 		} while (!(userChoice.equals("10")));
 
 		System.out.println("Thanks for coming by. See you soon.");
